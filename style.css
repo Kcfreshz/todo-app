@@ -1,0 +1,172 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgb(40, 180, 131, 0.8)
+    ),
+    url(".../img/hero-small.jpg") center center/cover;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 54rem;
+  height: fit-content;
+  padding: 3rem 3rem 5rem;
+  margin: 10rem auto 20px;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.container h2 {
+  margin-bottom: 1rem;
+}
+
+.new-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #cbd5e1;
+  border-radius: 5rem;
+  padding-left: 20px;
+  margin-bottom: 22px;
+}
+
+.input-task {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight: 14px;
+}
+
+.add-task {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin-left: 2rem;
+  padding: 10px 30px;
+  color: #333;
+  border-radius: 4rem;
+  background: rgba(126, 213, 111, 0.8);
+  cursor: pointer;
+}
+
+.tasks-container li {
+  list-style: none;
+  font-size: 20px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.tasks-container li::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: url(img/thin-circle.png) center center/cover;
+  top: 15px;
+  left: 20px;
+}
+
+.tasks-container li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+.tasks-container li.checked::before {
+  width: 15px;
+  height: 15px;
+  background: url(img/checked.png) center center/cover;
+}
+
+.tasks-container li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  font-size: 17px;
+  color: #555;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.tasks-container li span:hover {
+  background: #edeef0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 2rem;
+    margin: 5rem auto 20px;
+  }
+
+  .input-task {
+    margin-bottom: 1rem;
+    padding: 10px 50px;
+  }
+
+  .add-task {
+    width: 100%;
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 3rem auto 20px;
+  }
+
+  .input-task {
+    font-size: 1.4rem;
+  }
+
+  .add-task {
+    font-size: 1.4rem;
+    padding: 12px;
+  }
+
+  .tasks-container li {
+    font-size: 1.6rem;
+    padding: 10px 8px 10px 40px;
+  }
+
+  .tasks-container li::before {
+    width: 12px;
+    height: 12px;
+    top: 12px;
+    left: 15px;
+  }
+
+  .tasks-container li span {
+    font-size: 1.5rem;
+  }
+}
